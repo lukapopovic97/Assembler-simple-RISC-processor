@@ -1,0 +1,3 @@
+.equ a, b
+.equ b, c
+.equ c, a

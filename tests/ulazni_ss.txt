@@ -1,0 +1,48 @@
+.equ i, lok1-lok2
+.global glob1
+.extern ext1
+.equ u, o-5
+.section .text
+	halt
+	xchgb r1h, glob1
+	int a
+	mov r1, 44
+.equ k, 55
+.equ n,k-400
+	addb r3[11], r4h
+	mul r5, r6
+	div r3, r4
+	cmp r1, 1
+
+	not r1
+	and r4[b], 5555
+glob1:
+	or r1, 1
+	xor r1,1
+.equ p, lok2-lok1
+	test r1, 1
+	shl r1, 2
+	shr r1, 2
+.equ o, lok3-lok4
+lok1:   push r1
+	pop r1
+lok2:
+	jeq *1001 
+	jne ext1
+	jgt *1001	
+	call $glob1
+	ret 
+	iret
+lok3:
+a: .skip 5
+lok4:
+lok5:
+b: .byte 2
+c: .skip 3
+lok6:
+.data
+.byte 1
+.word 0xff
+.section .sekcija1 rwx
+.word 0
+.end

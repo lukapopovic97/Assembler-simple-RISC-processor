@@ -1,0 +1,17 @@
+.global glob1
+.section .text
+	halt
+	xchgb r1h, glob1
+	int a
+	mov r1, 44
+.equ k, 55
+.equ n,k-400
+	addb r3[11], r4h
+	mul r5, r6
+	div r3, r4
+	cmp r1, 1
+
+	not r1
+	and r4[b], 5555
+glob1:
+.end
